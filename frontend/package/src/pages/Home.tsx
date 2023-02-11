@@ -1,26 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { Dropdown } from 'react-bootstrap';
 import BannerCard from './../components/Home/BannerCard';
 import OneStop from './../components/Home/OneStop';
-import RecentNews from './../components/Home/RecentNews';
 import baner1 from './../assets/images/home-banner/img1.png';
 import baner2 from './../assets/images/home-banner/img2.png';
 import Shape1 from './../assets/images/home-banner/shape1.png';
 import Shape3 from './../assets/images/home-banner/shape3.png';
-// import wallet from './../assets/images/icons/wallet.svg';
 import analysis from './../assets/images/icons/analysis.svg';
 import visualization from './../assets/images/icons/visualization.svg';
 import forecast from './../assets/images/icons/forecast.svg';
 import userInterface from './../assets/images/icons/user-interface.svg';
-// import friend from './../assets/images/icons/friend.svg';
-
-// import coin1 from './../assets/images/coins/coin1.png';
-// import coin3 from './../assets/images/coins/coin3.png';
-// import coin4 from './../assets/images/coins/coin4.png';
-
-import bloglg from './../assets/images/blog/blog-ig.png';
-import avatar3 from './../assets/images/avatar/avatar3.jpg';
 
 const trustBlog = [
   { image: analysis, title: 'Buy Cryptocurrency with cash' },
@@ -29,13 +18,7 @@ const trustBlog = [
   { image: userInterface, title: 'Cryptocurrency Consultancy' }
 ];
 
-function Home() {
-  // const nav = useNavigate();
-  // const formDetails = (e) => {
-  //   e.preventDefault();
-  //   nav('/contact-us');
-  // };
-  // const [selecttext, setSelectText] = useState([coin4, 'Bitcoin']);
+export const Home = () => {
   return (
     <>
       <div className="page-content">
@@ -123,56 +106,7 @@ function Home() {
           </div>
           <img className="bg-shape1" src={Shape1} alt="" />
         </section>
-        <section className="content-inner bg-white blog-wrapper">
-          <img className="bg-shape1" src={Shape1} alt="" />
-
-          <div className="container">
-            <div className="row">
-              <div className="col-xl-7 col-lg-12">
-                <div className="section-head ">
-                  <h6 className="sub-title text-primary">FROM OUR BLOG</h6>
-                  <h2 className="title">Recent News &amp; Updates</h2>
-                </div>
-                <RecentNews />
-              </div>
-              <div className="col-xl-5 col-lg-12 m-b30 ">
-                <div className="dz-card style-2" style={{ backgroundImage: 'url(' + bloglg + ')' }}>
-                  <div className="dz-category">
-                    <ul className="dz-badge-list">
-                      <li>
-                        <Link to={'#'} className="dz-badge">
-                          14 Fan 2022
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="dz-info">
-                    <h2 className="dz-title">
-                      <Link to={'/blog-details'} className="text-white">
-                        Directly support individuals Crypto
-                      </Link>
-                    </h2>
-                    <div className="dz-meta">
-                      <ul>
-                        <li className="post-author">
-                          <Link to={'#'}>
-                            <img src={avatar3} alt="" className="me-2" />
-                            <span>By Noare</span>
-                          </Link>
-                        </li>
-                        <li className="post-date">
-                          <Link to={'#'}> 12 May 2022</Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );
-}
-export default Home;
+};

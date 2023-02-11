@@ -14,7 +14,6 @@ function Header() {
   }, []);
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
   return (
     <>
       <header className="site-header mo-left header header-transparent style-1">
@@ -81,23 +80,6 @@ function Header() {
                   </li>
                   <li>
                     <NavLink to={'/pricing'}>Pricing</NavLink>
-                  </li>
-                  <li
-                    className={`sub-menu-down ${showMenu ? 'open' : ''}`}
-                    id="menushow"
-                    onClick={() => setShowMenu(!showMenu)}>
-                    <Link to={'#'}>Blog</Link>
-                    <ul className="sub-menu">
-                      <li>
-                        <NavLink to={'/blog-list'}>Blog list</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to={'/blog-grid'}>Blog grid</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to={'/blog-details'}>Blog details</NavLink>
-                      </li>
-                    </ul>
                   </li>
                   <li>
                     <NavLink to={'/contact-us'}>Contact Us</NavLink>
