@@ -1,0 +1,5 @@
+/frontend/package/node_modules
+/frontend/package/.idea
+/admin_dashboard
+.idea
+.DS_Store
