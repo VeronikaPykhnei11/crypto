@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
 import { NavBarLinksList } from '../../components/Header/NavBar/NavBarLinksList/NavBarLinksList';
-import { SocialMediaLinksList } from '../../components/Header/SocialMediaList/SocialMediaLinksList/SocialMediaLinksList';
+import { SocialMediaLinksList } from '../../components/common/SocialMediaList/SocialMediaLinksList/SocialMediaLinksList';
 import { Logo } from '../../components/Header/Logo/Logo';
 import { HeaderButton } from '../../components/Header/HeaderButton/HeaderButton';
 import {
@@ -56,7 +56,10 @@ export const Header = () => {
                 </div>
                 <NavBarLinksList linksList={linksList} />
                 <div className="header-bottom">
-                  <SocialMediaLinksList socialMediaLinks={socialMediaLinks} />
+                  <SocialMediaLinksList
+                    socialMediaLinks={socialMediaLinks}
+                    wrapperClassName={'dz-social-icon'}
+                  />
                 </div>
               </div>
             </div>

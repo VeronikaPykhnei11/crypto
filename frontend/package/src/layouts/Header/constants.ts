@@ -3,7 +3,6 @@ import LogoWhite from '../../assets/images/logo-white.png';
 
 export const linksList = [
   { toHref: '/', linkTitle: 'Home' },
-  { toHref: '/about-us', linkTitle: 'About Us' },
   { toHref: '/pricing', linkTitle: 'Pricing' },
   { toHref: '/contact-us', linkTitle: 'Contact Us' }
 ];

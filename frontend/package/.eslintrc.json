@@ -28,6 +28,7 @@
         "react/no-unescaped-entities": "off",
         "react/jsx-no-target-blank": "off",
         "react/prop-types": "off",
-        "react/no-case-declarations": "off"
+        "react/no-case-declarations": "off",
+        "react/jsx-key": "off"
     }
 }
