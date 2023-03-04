@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import PageLayout from './../layouts/PageLayout';
+import { PageLayout } from './../layouts/PageLayout';
 
 function ContactUs() {
   const nav = useNavigate();

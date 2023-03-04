@@ -6,7 +6,7 @@ import { Header } from '../layouts/Header/Header';
 import { Footer } from '../layouts/Footer/Footer';
 import { Home } from './Home';
 import Login from './Login';
-import Pricing from './Pricing';
+import { Pricing } from './Pricing/Pricing';
 import ContactUs from './ContactUs';
 
 function Index() {

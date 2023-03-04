@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BackgroundShape } from './BackgroundShape';
 
-//images
-import Shape1 from './../assets/images/home-banner/shape1.png';
-import Shape3 from './../assets/images/home-banner/shape3.png';
-
-const PageLayout = ({ pageTitle, desc }) => {
+export const PageLayout = ({ pageTitle, desc = true }) => {
   return (
     <>
       <div className="dz-bnr-inr style-1 text-center">
@@ -25,12 +22,8 @@ const PageLayout = ({ pageTitle, desc }) => {
             </nav>
           </div>
         </div>
-        <img className="bg-shape1" src={Shape1} alt="" />
-        <img className="bg-shape2" src={Shape1} alt="" />
-        <img className="bg-shape3" src={Shape3} alt="" />
-        <img className="bg-shape4" src={Shape3} alt="" />
+        <BackgroundShape />
       </div>
     </>
   );
 };
-export default PageLayout;
