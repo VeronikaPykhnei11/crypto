@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BannerCard from './../components/Home/BannerCard';
-import OneStop from './../components/Home/OneStop';
-import baner1 from './../assets/images/home-banner/img1.png';
-import baner2 from './../assets/images/home-banner/img2.png';
-import Shape1 from './../assets/images/home-banner/shape1.png';
-import Shape3 from './../assets/images/home-banner/shape3.png';
-import analysis from './../assets/images/icons/analysis.svg';
-import visualization from './../assets/images/icons/visualization.svg';
-import forecast from './../assets/images/icons/forecast.svg';
-import userInterface from './../assets/images/icons/user-interface.svg';
+import BannerCard from '../../components/Home/BannerCard';
+import OneStop from '../../components/Home/OneStop';
+import baner1 from '../../assets/images/home-banner/img1.png';
+import baner2 from '../../assets/images/home-banner/img2.png';
+import Shape1 from '../../assets/images/home-banner/shape1.png';
+import Shape3 from '../../assets/images/home-banner/shape3.png';
+import analysis from '../../assets/images/icons/analysis.svg';
+import visualization from '../../assets/images/icons/visualization.svg';
+import forecast from '../../assets/images/icons/forecast.svg';
+import userInterface from '../../assets/images/icons/user-interface.svg';
 
 const trustBlog = [
   { image: analysis, title: 'Buy Cryptocurrency with cash' },

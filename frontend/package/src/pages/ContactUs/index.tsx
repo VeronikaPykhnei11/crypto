@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { PageLayout } from './../layouts/PageLayout';
+import { PageLayout } from '../../layouts/PageLayout';
+import { socialMediaLinks } from '../../layouts/Header/constants';
+import { SocialMediaLinksList } from '../../components/common/SocialMediaList/SocialMediaLinksList/SocialMediaLinksList';
 
-function ContactUs() {
+export const ContactUs = () => {
   const nav = useNavigate();
-  const submitHandler = (e) => {
+  const submitHandler = (e: any) => {
     e.preventDefault();
     nav('/');
   };
@@ -53,48 +55,10 @@ function ContactUs() {
                       </ul>
                     </div>
                   </div>
-
-                  <div className="social-box dz-social-icon style-3">
-                    <h6>Our Socials</h6>
-                    <ul className="social-icon">
-                      <li>
-                        <a
-                          className="social-btn"
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://www.facebook.com/">
-                          <i className="fa-brands fa-facebook-f"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="social-btn"
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://www.instagram.com/">
-                          <i className="fa-brands fa-instagram"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="social-btn"
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://twitter.com/">
-                          <i className="fa-brands fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="social-btn"
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://youtube.com/">
-                          <i className="fab fa-youtube"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                  <SocialMediaLinksList
+                    socialMediaLinks={socialMediaLinks}
+                    wrapperClassName={'social-box dz-social-icon style-3'}
+                  />
                 </div>
               </div>
 
@@ -181,5 +145,4 @@ function ContactUs() {
       </div>
     </>
   );
-}
-export default ContactUs;
+};
