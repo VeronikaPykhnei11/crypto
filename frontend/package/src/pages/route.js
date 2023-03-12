@@ -8,20 +8,47 @@ import { Home } from './Home';
 import { Login } from './Login';
 import { Pricing } from './Pricing/Pricing';
 import { ContactUs } from './ContactUs';
+import { SignUp } from './Sign Up';
 
 function Index() {
   return (
     <BrowserRouter basename="/frontend/react">
       <div className="page-wraper">
-        {/*<Header />*/}
         <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/pricing" exact element={<Pricing />} />
-          <Route path="/contact-us" exact element={<ContactUs />} />
+          <Route
+            path="/"
+            exact
+            element={
+              <>
+                {' '}
+                <Header /> <Home /> <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/pricing"
+            exact
+            element={
+              <>
+                {' '}
+                <Header /> <Pricing /> <Footer />{' '}
+              </>
+            }
+          />
+          <Route
+            path="/contact-us"
+            exact
+            element={
+              <>
+                {' '}
+                <Header /> <ContactUs /> <Footer />{' '}
+              </>
+            }
+          />
           <Route path="/login" exact element={<Login />} />
+          <Route path="/sign-up" exact element={<SignUp />} />
         </Routes>
-        {/*<Footer />*/}
-        {/*<ScrollToTop />*/}
+        <ScrollToTop />
       </div>
     </BrowserRouter>
   );

@@ -4,12 +4,6 @@
     margin-left: 0.625rem;
 }
 }
-
-.login-form .forget-pass {
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-}
 .dz-social {
     display: flex;
     justify-content: space-between;
@@ -39,19 +33,6 @@ a {
 }
 div#mCSB_1 {
     margin-top: 100px;
-}
-
-.heart-blast {
-    background-position: -105rem 0 !important;
-    transition: background 1s steps(28); }
-
-.heart {
-    width: 3.75rem;
-    height: 3.75rem;
-    display: inline-block;
-    background: url("../../assets/images/icons/like.png");
-    cursor: pointer;
-    margin: -1.5625rem -0.9375rem;
 }
 
 .login-form-footer {
