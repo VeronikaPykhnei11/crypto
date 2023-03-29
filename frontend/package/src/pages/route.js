@@ -2,13 +2,17 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { ScrollToTop } from '../helpers';
-import { Header } from '../layouts/Header/Header';
-import { Footer } from '../layouts/Footer/Footer';
-import { Home } from './Home';
-import { Login } from './Login';
-import { Pricing } from './Pricing/Pricing';
-import { ContactUs } from './ContactUs';
-import { SignUp } from './Sign Up';
+import { Header } from '../layouts/MainPages/Header/Header';
+import { Footer } from '../layouts/MainPages/Footer/Footer';
+import { Home } from './MainPages/Home';
+import { Login } from './MainPages/Login';
+import { Pricing } from './MainPages/Pricing/Pricing';
+import { ContactUs } from './MainPages/ContactUs';
+import { SignUp } from './MainPages/Sign Up';
+import { AdminHome } from './AdminPages/AdminHome';
+import { Dashboard } from './AdminPages/Dashboard/Dashboard';
+import { CryptoList } from './AdminPages/CryptoList/CryptoList';
+import { CoinDetails } from './AdminPages/CoinDetails/CoinDetails';
 
 function Index() {
   return (
@@ -47,6 +51,33 @@ function Index() {
           />
           <Route path="/login" exact element={<Login />} />
           <Route path="/sign-up" exact element={<SignUp />} />
+          <Route
+            path="/dashboard"
+            exact
+            element={
+              <AdminHome>
+                <Dashboard />
+              </AdminHome>
+            }
+          />
+          <Route
+            path="/crypto"
+            exact
+            element={
+              <AdminHome>
+                <CryptoList />
+              </AdminHome>
+            }
+          />
+          <Route
+            path="/coin-details"
+            exact
+            element={
+              <AdminHome>
+                <CoinDetails />
+              </AdminHome>
+            }
+          />
         </Routes>
         <ScrollToTop />
       </div>

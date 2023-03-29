@@ -1,0 +1,27 @@
+.table-wrapper {
+  margin-right: 20px;
+  margin-top: 20px;
+  th {
+    border-bottom: 1px solid #eee;
+    font-size: .9rem;
+    padding: 0.75rem 0.6375rem;
+    color: #374557;
+    font-weight: 600;
+    text-transform: capitalize;
+    white-space: nowrap;
+  }
+  td {
+    color: var(--secondary);
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 1.05rem 0.9375rem;
+  }
+}
+
+.crypto-second-title {
+  color: #89879f;
+}
+
+.input-group {
+  padding-right: 1rem;
+}

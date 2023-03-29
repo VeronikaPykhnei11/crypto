@@ -1,0 +1,27 @@
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+}
+
+.item-row-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.title-icon-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -14,7 +14,7 @@ export const LoginRightsSection = () => {
             <span
               className={`heart ${heartActive ? '' : 'heart-blast'}`}
               onClick={() => setHeartActive(!heartActive)}></span>
-            <a href="frontend/package/src/pages/Login/Login" target="_blank">
+            <a href="frontend/package/src/pages/MainPages/Login/Login" target="_blank">
               {' '}
               CryptoApp{' '}
             </a>{' '}
