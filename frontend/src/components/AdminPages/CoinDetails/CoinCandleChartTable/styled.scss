@@ -1,0 +1,24 @@
+.coin-chart-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 0 solid transparent;
+  border-radius: 1.25rem;
+  box-shadow: 0 0.3125rem 0.3125rem 0 rgb(82 63 105 / 5%);
+  height: calc(100% - 30px);
+  margin-bottom: 1.875rem;
+  transition: all 0.5s ease-in-out;
+  padding: 1.8rem;
+}
+
+.card-header-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+
+.currency-select-wrapper {
+  width: 30%;
+}

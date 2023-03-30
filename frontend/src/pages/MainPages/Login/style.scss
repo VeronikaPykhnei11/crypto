@@ -1,0 +1,48 @@
+.logo-header {
+    margin-bottom: 2rem;
+.logo-white {
+    margin-left: 0.625rem;
+}
+}
+.dz-social {
+    display: flex;
+    justify-content: space-between;
+}
+.dz-social-icon {
+    display: inline-flex;
+    margin: 0 -3px;
+    padding: 0;
+    text-align: center;
+li{
+    font-size: 12px;
+    margin-right: 0.2rem;
+a {
+    color: #ffffff;
+    font-size: 14px;
+    height: 35px;
+    line-height: 34px;
+    padding: 0;
+    width: 35px;
+    border-radius: 4px;
+}
+}
+}
+.bg-img-fix{
+&:before{
+ }
+}
+div#mCSB_1 {
+    margin-top: 100px;
+}
+
+.login-form-footer {
+    background-color: transparent !important;
+    border-color: #eeee;
+    padding: 1.25rem 1.875rem;
+    border-top: 1px solid rgba(0,0,0,.125);
+    font-size: .875rem;
+}
+
+.login-form-body {
+    padding: 1.875rem !important;
+}
