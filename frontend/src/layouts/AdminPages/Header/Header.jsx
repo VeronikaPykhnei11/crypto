@@ -21,8 +21,8 @@ export const Header = () => {
 
   return (
     <div className={'row'}>
-      <div className={'col-xl-12 header-wrapper'}>
-        <div className={`header-title-wrapper ${headerFix ? 'is-fixed' : ''}`}>
+      <div className={'col-xl-12 admin-header-wrapper'}>
+        <div className={`header-title-wrapper ${headerFix ? 'is-admin-header-fixed' : ''}`}>
           <img
             src={isSideBarOpen ? gridIcon : arrowRightIcon}
             className={'header-icon'}

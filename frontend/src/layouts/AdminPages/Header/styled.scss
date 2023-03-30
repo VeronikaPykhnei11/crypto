@@ -1,6 +1,6 @@
 @import "../../../assets/scss/abstract/variable";
 
-.header-wrapper {
+.admin-header-wrapper {
   position: relative;
   width: 100%;
   z-index: 100;
@@ -8,7 +8,7 @@
   margin-bottom: 2rem;
 }
 
-.is-fixed {
+.is-admin-header-fixed {
   backdrop-filter: blur(6px);
   background-color: #36246514;
 }

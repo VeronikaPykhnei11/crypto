@@ -1,7 +1,7 @@
 import React, { useMemo, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-export const ToastPortal = ({ children }: any) => {
+export const RootPortal = ({ children }: any) => {
   const portalRoot = document.getElementById('portal-root') as HTMLElement;
   const toastContainer = useMemo(() => document.createElement('div'), []);
 

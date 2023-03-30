@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Link } from 'react-router-dom';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { SuccessToast } from '../../../common/Toast/SuccessToast';
 import './styles.scss';
-import { SuccessToast } from '../../../common/Toast';
-// import { useDispatch } from 'react-redux';
-// import { loadingToggleAction, loginAction } from '../../../store/actions/AuthActions';
 
 export const LoginForm = () => {
   const [isToastOpen, setToastOpen] = useState(false);

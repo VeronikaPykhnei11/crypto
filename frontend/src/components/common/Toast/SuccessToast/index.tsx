@@ -1,10 +1,10 @@
 import React from 'react';
 import Toast from 'react-bootstrap/Toast';
-import { ToastPortal } from './ToastPortar';
+import { RootPortal } from '../../RootPortal';
 
 export const SuccessToast = ({ isOpen, onClose }: any) => {
   return (
-    <ToastPortal>
+    <RootPortal>
       <Toast show={isOpen} onClose={onClose}>
         <Toast.Header>
           <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
@@ -13,6 +13,6 @@ export const SuccessToast = ({ isOpen, onClose }: any) => {
         </Toast.Header>
         <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
       </Toast>
-    </ToastPortal>
+    </RootPortal>
   );
 };
