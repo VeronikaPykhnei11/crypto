@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { PageLayout } from '../../../layouts/MainPages/PageLayout';
-import { PriceBlog } from '../../../components/Pricing/PriceBlog';
+import { PriceBlog } from '../../../components/MainPages/Pricing/PriceBlog';
 import { BackgroundShape } from '../../../layouts/MainPages/BackgroundShape';
 
 export const Pricing = () => {

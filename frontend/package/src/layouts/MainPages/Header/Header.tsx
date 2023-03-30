@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
-import { NavBarLinksList } from '../../../components/Header/NavBar/NavBarLinksList/NavBarLinksList';
+import { NavBarLinksList } from '../../../components/MainPages/Header/NavBar/NavBarLinksList/NavBarLinksList';
 import { SocialMediaLinksList } from '../../../components/common/SocialMediaList/SocialMediaLinksList/SocialMediaLinksList';
-import { Logo } from '../../../components/Header/Logo/Logo';
-import { HeaderButton } from '../../../components/Header/HeaderButton/HeaderButton';
+import { Logo } from '../../../components/MainPages/Header/Logo/Logo';
+import { HeaderButton } from '../../../components/MainPages/Header/HeaderButton/HeaderButton';
 import {
   logoList,
   headerButtonsList,

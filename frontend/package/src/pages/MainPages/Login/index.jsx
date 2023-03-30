@@ -6,10 +6,10 @@ import logo from '../../../assets/images/logo-full.png';
 import bg6 from '../../../assets/images/background/bg6.jpg';
 
 import './style.scss';
-import { LoginForm } from '../../../components/Login/LoginForm';
+import { LoginForm } from '../../../components/MainPages/Login/LoginForm';
 import { socialMediaLinks } from '../../../layouts/MainPages/Header/constants';
 import { SocialMediaLinksList } from '../../../components/common/SocialMediaList/SocialMediaLinksList/SocialMediaLinksList';
-import { LoginRightsSection } from '../../../components/Login/LoginRightsSection';
+import { LoginRightsSection } from '../../../components/MainPages/Login/LoginRightsSection';
 
 export const Login = (props) => {
   return (
@@ -48,7 +48,7 @@ export const Login = (props) => {
                         <div className="text-center bottom">
                           <p>Don't have an account yet?</p>
                           <NavLink
-                            to="/page-register"
+                            to="/sign-up"
                             className="btn btn-primary button-md btn-block w-100">
                             Create an account
                           </NavLink>

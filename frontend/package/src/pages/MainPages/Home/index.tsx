@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BannerCard from '../../../components/Home/BannerCard';
-import OneStop from '../../../components/Home/OneStop';
+import BannerCard from '../../../components/MainPages/Home/BannerCard';
+import OneStop from '../../../components/MainPages/Home/OneStop';
 import baner1 from '../../../assets/images/home-banner/img1.png';
 import baner2 from '../../../assets/images/home-banner/img2.png';
 import Shape1 from '../../../assets/images/home-banner/shape1.png';

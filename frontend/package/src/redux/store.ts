@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
-import PostsReducer from './reducers/PostsReducer';
 import { AuthReducer } from './reducers/AuthReducer';
 import { activePageReducer, sideBarReducer } from './reducers/reducers';
 
@@ -11,7 +10,6 @@ export interface PageState {
 }
 
 const rootReducer = combineReducers({
-  posts: PostsReducer,
   auth: AuthReducer,
   activePage: activePageReducer,
   menuSideBar: sideBarReducer

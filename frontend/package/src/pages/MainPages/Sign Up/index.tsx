@@ -2,11 +2,11 @@ import React from 'react';
 import bg6 from '../../../assets/images/background/bg6.jpg';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/images/logo-full.png';
-import { LoginForm } from '../../../components/Login/LoginForm';
+import { LoginForm } from '../../../components/MainPages/Login/LoginForm';
 import { SocialMediaLinksList } from '../../../components/common/SocialMediaList/SocialMediaLinksList/SocialMediaLinksList';
 import { socialMediaLinks } from '../../../layouts/MainPages/Header/constants';
-import { LoginRightsSection } from '../../../components/Login/LoginRightsSection';
-import { SignUpForm } from '../../../components/SignUp/SignUpForm';
+import { LoginRightsSection } from '../../../components/MainPages/Login/LoginRightsSection';
+import { SignUpForm } from '../../../components/MainPages/SignUp/SignUpForm';
 
 export const SignUp = () => {
   return (

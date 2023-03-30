@@ -2,13 +2,13 @@ import React from 'react';
 import Select from 'react-select';
 import { CandleChart } from '../CandleChart/CandleChart';
 import { TableHeader } from '../../TableHeader/TableHeader';
-import './styled.scss';
 import { PriceContent } from '../PriceContent/PriceContent';
+import './styled.scss';
 
 const options = [
-  { value: '1', label: 'USD ($ US Dollar)' },
-  { value: '2', label: 'BTC ($ US Dollar)' },
-  { value: '3', label: 'USD ($ US Dollar)' }
+  { value: '1', label: 'USD (US Dollar)' },
+  { value: '2', label: 'UAH (Ukrainian hryvnia)' },
+  { value: '3', label: 'EUR (European Union)' }
 ];
 
 const priceContentItems = [
@@ -33,7 +33,7 @@ const priceContentItems = [
 export const CoinCandleChartTable = () => {
   return (
     <>
-      <div className="card coin-chart-table-wrapper">
+      <div className="coin-chart-table-wrapper">
         <div className="card-header-wrapper">
           <TableHeader
             title={'Coin Candlestick Chart'}

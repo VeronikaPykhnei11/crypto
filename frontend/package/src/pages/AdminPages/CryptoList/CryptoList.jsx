@@ -125,7 +125,7 @@ export const CryptoList = () => {
       <div className={'row'}>
         <div className="col-xl-12">
           <div className="card table-wrapper">
-            <div className="card-body pt-0">
+            <div className="card-body pt-3">
               <div className="table-responsive dataTablemarket">
                 <div id="market_wrapper" className="dataTables_wrapper no-footer">
                   <table
