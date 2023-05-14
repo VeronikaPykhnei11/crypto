@@ -12,6 +12,17 @@
   padding: 1.8rem;
 }
 
+.card-header-icon-text-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  img {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+  }
+}
+
 .card-header-wrapper {
   display: flex;
   flex-direction: column;

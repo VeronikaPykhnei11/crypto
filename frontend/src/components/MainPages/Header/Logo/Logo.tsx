@@ -15,3 +15,5 @@ export const Logo: React.FC<LogoProps> = ({ logoList }) => {
     </div>
   );
 };
+
+//Single-Responsibility

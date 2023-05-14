@@ -1,17 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
-
-import logo from '../../../assets/images/logo-full.png';
-import bg6 from '../../../assets/images/background/bg6.jpg';
-
-import './style.scss';
 import { LoginForm } from '../../../components/MainPages/Login/LoginForm';
 import { socialMediaLinks } from '../../../layouts/MainPages/Header/constants';
 import { SocialMediaLinksList } from '../../../components/common/SocialMediaList/SocialMediaLinksList/SocialMediaLinksList';
 import { LoginRightsSection } from '../../../components/MainPages/Login/LoginRightsSection';
+import logo from '../../../assets/images/logo-dark.png';
+import bg6 from '../../../assets/images/background/bg6.jpg';
+import './style.scss';
 
-export const Login = (props) => {
+
+const Login = () => {
   return (
     <div className="browse-job login-style3">
       <div
@@ -66,3 +64,5 @@ export const Login = (props) => {
     </div>
   );
 };
+
+export default Login;

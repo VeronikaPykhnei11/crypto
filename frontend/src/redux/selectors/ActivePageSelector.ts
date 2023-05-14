@@ -1,1 +1,1 @@
-export const activePageTitle = (state: { activePage: { title: string } }) => state.activePage.title;
+export const activePageTitle = (state: { activePageReducer: { title: string } }) => state.activePageReducer.title;

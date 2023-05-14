@@ -1,17 +1,22 @@
-const { Client } = require("pg");
+const { Pool } = require("pg");
 const express = require("express");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
+const cors = require("cors")
+const jsonwebtoken = require("jsonwebtoken");
 
-const clientDb = new Client({
-  user: "postgres",
-  host: "localhost",
-  database: "postgres",
-  password: "postgres",
-  port: 5432,
-});
+const JWT_SECRET =
+  "goK!pusp6ThEdURUtRenOwUhAsWUCLheBazl!uJLPlS8EbreWLdrupIwabRAsiBu";
 
 const app = express();
+
+app.use(express.static('public'))
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(cors({
+  origin:"http://localhost:3000",
+}))
 
 const PORT = process.env.PORT || 8000;
 
@@ -20,39 +25,48 @@ app.listen(PORT, () => {
 });
 
 app.post("/sign-up", async (req, res) => {
-  const { username, password, email } = req.body;
+
+  const { firstName, lastName, password, email } = req.body;
 
   const hashedPassword = await bcrypt.hash(password, 10);
+  const pool = new Pool({
+    user: "postgres",
+    host: "localhost",
+    database: "postgres",
+    password: "postgres",
+    port: 5432,
+  })
 
-  const client = await clientDb.connect();
   try {
-    await client.query("BEGIN");
+    await pool.query("BEGIN");
 
-    await client.query(
-      "INSERT INTO users (username, password, email) VALUES ($1, $2, $3)",
-      [username, hashedPassword, email]
+    await pool.query(
+      "INSERT INTO users (firstName, lastName, password, email) VALUES ($1, $2, $3, $4)",
+      [firstName, lastName, hashedPassword, email]
     );
 
-    await client.query("COMMIT");
+    await pool.query("COMMIT");
 
-    res.status(200).json({ message: "User created" });
+    const token = jsonwebtoken.sign(
+      { userEmail: email },
+      JWT_SECRET,
+    );
+
+    res.status(200).json({ message: "Success", token});
   } catch (e) {
-    await client.query("ROLLBACK");
     console.error(e);
     res.status(500).json({ message: "Internal server error" });
-  } finally {
-    client.release();
   }
 });
 
 app.post("/sign-in", async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
-  const client = await clientDb.connect();
+  const pool = await clientDb.connect();
   try {
-    const result = await client.query(
-      "SELECT * FROM users WHERE username = $1",
-      [username]
+    const result = await pool.query(
+      "SELECT * FROM users WHERE email = $1",
+      [email]
     );
 
     if (result.rows.length > 0) {
@@ -60,6 +74,8 @@ app.post("/sign-in", async (req, res) => {
       const passwordMatch = await bcrypt.compare(password, user.password);
 
       if (passwordMatch) {
+        await clientRedis.publish('login', email);
+
         res.status(200).json({ message: "Login successful" });
       } else {
         res.status(401).json({ message: "Incorrect password" });
@@ -71,6 +87,6 @@ app.post("/sign-in", async (req, res) => {
     console.error(e);
     res.status(500).json({ message: "Internal server error" });
   } finally {
-    client.release();
+    pool.release();
   }
 });

@@ -15,3 +15,5 @@ export const HeaderButton: React.FC<HeaderButtonProps> = ({ buttonsList }) => {
     </>
   );
 };
+
+//Single-Responsibility

@@ -4,7 +4,7 @@ import { PageLayout } from '../../../layouts/MainPages/PageLayout';
 import { PriceBlog } from '../../../components/MainPages/Pricing/PriceBlog';
 import { BackgroundShape } from '../../../layouts/MainPages/BackgroundShape';
 
-export const Pricing = () => {
+const Pricing = () => {
   return (
     <>
       <div className="page-content">
@@ -24,3 +24,5 @@ export const Pricing = () => {
     </>
   );
 };
+
+export default Pricing;

@@ -1,4 +1,4 @@
-import LogoDark from '../../../assets/images/logo.png';
+import LogoDark from '../../../assets/images/logo-dark.png';
 import LogoWhite from '../../../assets/images/logo-white.png';
 
 export const linksList = [
@@ -19,9 +19,13 @@ export const logoList = [
   { toHref: '/', className: 'logo-light', imgSrc: LogoWhite }
 ];
 
-export const headerButtonsList = [
-  { toHref: '/login', className: 'btn btn-outline-primary text-white', text: 'Log In' },
+export const authButtons = [
+  { toHref: '/login', className: 'btn btn-outline-primary text-white', text: 'Sign In' },
   { toHref: '/sign-up', className: 'btn btn-primary btn-gradient btn-shadow', text: 'Sign Up' }
+];
+
+export const signOutButton = [
+  { toHref: '/logout', className: 'btn btn-outline-primary text-white', text: 'Sign Out' },
 ];
 
 export const logoDropDownNavBar = [{ toHref: '/', className: 'logo-dark', imgSrc: LogoDark }];

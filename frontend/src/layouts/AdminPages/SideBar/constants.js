@@ -8,7 +8,7 @@ export const MenuList = [
     title: 'Dashboard',
     classsChange: 'mm-collapse',
     iconStyle: dashboardIcon,
-    toHref: '/dashboard'
+    toHref: '/admin/dashboard'
   },
   //Trading
   {
@@ -42,11 +42,11 @@ export const MenuList = [
     content: [
       {
         title: 'Coin List',
-        to: '/crypto'
+        to: '/admin/crypto'
       },
       {
         title: 'Coin Details',
-        to: '/coin-details'
+        to: '/admin/coin-details'
       },
       {
         title: 'Exchange',

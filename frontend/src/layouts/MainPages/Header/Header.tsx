@@ -6,22 +6,25 @@ import { Logo } from '../../../components/MainPages/Header/Logo/Logo';
 import { HeaderButton } from '../../../components/MainPages/Header/HeaderButton/HeaderButton';
 import {
   logoList,
-  headerButtonsList,
+  authButtons,
   logoDropDownNavBar,
   socialMediaLinks,
-  linksList
+  linksList,
+  signOutButton,
 } from './constants';
+import { useSelector } from 'react-redux';
+import { isAuthenticated } from '../../../redux/selectors/AuthSelectors';
 
 export const Header = () => {
   /* for sticky header */
   const [headerFix, setheaderFix] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const isUserAuthenticated = useSelector(isAuthenticated);
   useEffect(() => {
     window.addEventListener('scroll', () => {
       setheaderFix(window.scrollY > 50);
     });
   }, []);
-
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <>
       <header className="site-header mo-left header header-transparent style-1">
@@ -43,7 +46,7 @@ export const Header = () => {
               </button>
               <div className="extra-nav">
                 <div className="extra-cell">
-                  <HeaderButton buttonsList={headerButtonsList} />
+                  <HeaderButton buttonsList={isUserAuthenticated ? signOutButton : authButtons} />
                 </div>
               </div>
               <div

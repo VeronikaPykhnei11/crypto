@@ -1,4 +1,3 @@
-export const isAuthenticated = (state) => {
-    if (state.auth.auth.idToken) return true;
-    return false;
-};
+export const isAuthenticated = (state) => state.authReducer.isAuthenticated;
+
+export const activeUser = (state) => state.authReducer.user;

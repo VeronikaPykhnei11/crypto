@@ -1,0 +1,21 @@
+.confirmation-modal-cancel-button {
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: #362465;
+  border: 1px solid #362465;
+  background-color: white;
+  &:hover {
+    border: 1px solid #9568ff;
+  }
+}
+
+.confirmation-modal-confirm-button {
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: 1px solid #9568ff;
+  background-color: #9568ff;
+  color: white;
+  &:hover {
+    border: 1px solid #362465;
+  }
+}

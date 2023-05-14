@@ -14,9 +14,6 @@ export const CoinDetailsInfo: React.FC<CoinDetailsInfoProps> = ({
       <img src={icon} className={'coin-details-coin-icon'} />
       <h4 className="coin-details-info-title">{title}</h4>
       <div className="coin-details-info-subtitle">{coinName}</div>
-      <div className="coin-details-info-price">
-        1 {coinName} = {price}
-      </div>
       <p className="coin-details-info-text">{infoText}</p>
     </div>
   );

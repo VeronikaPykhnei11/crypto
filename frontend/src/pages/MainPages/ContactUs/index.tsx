@@ -5,7 +5,7 @@ import { PageLayout } from '../../../layouts/MainPages/PageLayout';
 import { socialMediaLinks } from '../../../layouts/MainPages/Header/constants';
 import { SocialMediaLinksList } from '../../../components/common/SocialMediaList/SocialMediaLinksList/SocialMediaLinksList';
 
-export const ContactUs = () => {
+const ContactUs = () => {
   const nav = useNavigate();
   const submitHandler = (e: any) => {
     e.preventDefault();
@@ -120,10 +120,6 @@ export const ContactUs = () => {
                               className="form-control"
                               placeholder="Message"></textarea>
                           </div>
-                          {/* <div className="col-xl-12 mb-3 mb-md-4">
-                                                        <div className="g-recaptcha" data-sitekey="6LefsVUUAAAAADBPsLZzsNnETChealv6PYGzv3ZN" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
-                                                        <input className="form-control d-none" style="display:none;" data-recaptcha="true"  data-error="Please complete the Captcha" />
-                                                    </div> */}
                           <div className="col-xl-12">
                             <button
                               name="submit"
@@ -146,3 +142,5 @@ export const ContactUs = () => {
     </>
   );
 };
+
+export default ContactUs;

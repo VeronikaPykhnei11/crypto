@@ -18,7 +18,7 @@ const trustBlog = [
   { image: userInterface, title: 'Cryptocurrency Consultancy' }
 ];
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
       <div className="page-content">
@@ -110,3 +110,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;
