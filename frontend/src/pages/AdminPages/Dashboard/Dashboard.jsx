@@ -3,18 +3,13 @@ import { CryptoSlider } from '../../../components/AdminPages/CryptoSlider/Crypto
 import { TopCryptoCard } from '../../../components/AdminPages/TopCryptoCard/TopCryptoCard';
 import CryptoList from '../CryptoList/CryptoList';
 import { SearchBar } from '../../../components/AdminPages/SearchBar/SearchBar';
-import { CryptoHeatMap } from '../../../components/AdminPages/CryptoHeatMap';
+import { CryptoTreeMap } from '../../../components/AdminPages/CryptoTreeMap';
 
 const Dashboard = () => {
   return (
     <>
       <CryptoSlider />
       <TopCryptoCard />
-      <div className={'row'}>
-        <div className="col-xl-12">
-          <CryptoHeatMap />
-        </div>
-      </div>
       <div className={'row'}>
         <div className="col-xl-4 offset-8 p-10">
           <SearchBar />

@@ -587,7 +587,6 @@ export const CandleChart = ({isFuture}) => {
   const [cryptoData, setCryptoData] = useState([]);
   useEffect(async () => {
     axios.get(`https://api.binance.com/api/v3/klines?symbol=${coinSymbol}&interval=1d&limit=180`).then((response) => {
-      console.log(response.data, 111);
       const preprocessedData = response.data.map((el) => {
         const date = new Date(el[0]);
 

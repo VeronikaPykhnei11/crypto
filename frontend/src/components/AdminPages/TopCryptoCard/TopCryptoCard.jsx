@@ -25,7 +25,6 @@ export const TopCryptoCard = () => {
         const percentageChangeB = parseFloat(b.volume);
         return percentageChangeB - percentageChangeA;
       });
-      console.log(sortedData)
 
       setTopGainers(sortedData.slice(0, 3));
       setTopLoosers(sortedData.slice(-3));

@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import {generateTextAnalysis} from './generateTextAnalysis';
 
 export const AnalysisCrypto = ({title, data}) => {
-  console.log(data, "DATA")
   const analysisResult = generateTextAnalysis(data);
-  console.log(analysisResult)
   // const labels = ["Average Volume: ", "Minimum Volume: ", "Maximum Volume: ", "Average Price: ", "Minimum Price: ", "Maximum Price: ", "Average Market Cap: ", "Minimum Market Cap: ", "Maximum Market Cap: ", "Volume Volatility: ", "Price Volatility: ", "Market Cap Volatility: ", "Volume-Price Correlation: ", "Volume-Market Cap Correlation: ", "Volume-Market Cap Correlation: ", "Price-Market Cap Correlation: "]
   const labels = [`Average ${title}: `, `Minimum ${title}: `, `Maximum ${title}: `, `${title} Volatility: `]
   return (

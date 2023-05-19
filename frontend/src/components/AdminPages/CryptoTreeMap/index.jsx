@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import './styled.scss';
 
-export const CryptoHeatMap = () => {
+export const CryptoTreeMap = () => {
   const [cryptoData, setCryptoData] = useState([]);
   useEffect(async () => {
     axios.get(`https://api.binance.com/api/v3/ticker/24hr`).then((response) => {

@@ -9,6 +9,8 @@ import { AnalysisCrypto } from './AnalysisCrypto/AnalysisCrypto';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { coinSymbolSelector } from '../../../redux/selectors/coinDetailsSelectors';
+import { correlation } from 'mathjs';
+import { CryptoHeatMap } from '../CoinHeatMap/CoinMetricCorrelationHeatMap';
 
 export const CoinDetails = ({isFuture}) => {
   const coinSymbol = useSelector(coinSymbolSelector);
@@ -16,7 +18,6 @@ export const CoinDetails = ({isFuture}) => {
   const [cryptoData, setCryptoData] = useState([]);
   useEffect(async () => {
     axios.get(`https://api.binance.com/api/v3/exchangeInfo?symbol=${coinSymbol}`).then((response) => {
-      console.log(response, 12345)
       const symbol = response.data.symbols[0].baseAsset;
       axios.get(`https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?symbol=${symbol}`, {
         headers: {
@@ -36,7 +37,6 @@ export const CoinDetails = ({isFuture}) => {
         const day = date.getDate();
 
         const formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
-        console.log(parseFloat(el[4]).toFixed(8).replace(/\.?0+$/, ""), 1111111)
         return [formattedDate, parseFloat(el[4]).toFixed(8).replace(/\.?0+$/, ""), parseFloat(el[5]).toFixed(8).replace(/\.?0+$/, ""), (parseFloat(el[4]) * parseFloat(el[7])).toFixed(8).replace(/\.?0+$/, "")];
       })
       setCryptoData(preprocessedData)
@@ -68,37 +68,30 @@ export const CoinDetails = ({isFuture}) => {
         </div>
       </div>
       <div className="row">
-        <div className="col-xl-9 col-xxl-9">
+        <div className="col-xl-6 col-xxl-6">
           <CoinPriceHistogram title={coinData.name} dataTitle={"Price"} data={cryptoData.map((el) => el[1])} dates={cryptoData.map((el) => el[0])}/>
+        </div>
+        <div className="col-xl-6 col-xxl-6">
+          <CoinPriceHistogram title={coinData.name} dataTitle={"Volume"} data={cryptoData.map((el) => el[2])} dates={cryptoData.map((el) => el[0])}/>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-xl-6 col-xxl-6">
+          <CoinPriceHistogram title={coinData.name} dataTitle={"MarketCap"} data={cryptoData.map((el) => el[3])} dates={cryptoData.map((el) => el[0])}/>
+        </div>
+        <div className="col-xl-6 col-xxl-6">
+          <CoinPriceHistogram title={coinData.name} dataTitle={"MarketCap"} data={cryptoData.map((el) => el[3])} dates={cryptoData.map((el) => el[0])}/>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-xl-9 col-xxl-6">
+          <CryptoHeatMap />
         </div>
         <div className="col-xl-3 col-xxl-3 col-sm-6">
           <AnalysisCrypto title={"Price"} data={cryptoData.map((el) => {
-            console.log(el)
             return {
               date: el[0],
               value: el[1],
-            }
-          })} />
-        </div>
-        <div className="col-xl-9 col-xxl-9">
-          <CoinPriceHistogram title={coinData.name} dataTitle={"Volume"} data={cryptoData.map((el) => el[2])} dates={cryptoData.map((el) => el[0])}/>
-        </div>
-        <div className="col-xl-3 col-xxl-3 col-sm-6">
-          <AnalysisCrypto title={"Volume"} data={cryptoData.map((el) => {
-            return {
-              date: el[0],
-              value: el[2],
-            }
-          })} />
-        </div>
-        <div className="col-xl-9 col-xxl-9">
-          <CoinPriceHistogram title={coinData.name} dataTitle={"MarketCap"} data={cryptoData.map((el) => el[3])} dates={cryptoData.map((el) => el[0])}/>
-        </div>
-        <div className="col-xl-3 col-xxl-3 col-sm-6">
-          <AnalysisCrypto title={"MarketCap"} data={cryptoData.map((el) => {
-            return {
-              date: el[0],
-              value: el[3],
             }
           })} />
         </div>
