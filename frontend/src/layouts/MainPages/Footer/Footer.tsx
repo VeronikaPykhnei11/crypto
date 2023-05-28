@@ -27,8 +27,7 @@ export const Footer = () => {
                     </Link>
                   </div>
                   <p>
-                    CryptoZone is a Crypto & Crypto Website by DexignZone lorem ipsum dolor sit
-                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    Our website is a comprehensive platform that offers analysis and visualization tools for cryptocurrency metrics, coupled with the power of neural networks to generate predictions of future price movements. It provides users with the ability to explore historical data, track market trends, and make informed investment decisions based on accurate forecasts, all in one convenient and user-friendly interface.
                   </p>
                   <SocialMediaLinksList
                     socialMediaLinks={socialMediaLinks}

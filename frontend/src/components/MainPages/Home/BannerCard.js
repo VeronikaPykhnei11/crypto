@@ -5,9 +5,9 @@ import coin3 from '../../../assets/images/coins/coin3.png';
 import coin4 from '../../../assets/images/coins/coin4.png';
 
 const cardData = [
-  { image: coin4, title: 'Bitcoin', subtitle: 'BTC', price: '16,048.40', percent: '-1.26' },
-  { image: coin3, title: 'Ethereum', subtitle: 'ETH', price: '1,122.44', percent: '-1.55' },
-  { image: coin1, title: 'Tether', subtitle: 'USDT', price: '1.00', percent: '0.0099' }
+  { image: coin4, title: 'Bitcoin', subtitle: 'BTC', price: '22069.61', percent: '-1.26' },
+  { image: coin3, title: 'Ethereum', subtitle: 'ETH', price: '1,497.44', percent: '-1.55' },
+  { image: coin1, title: 'Tether', subtitle: 'USDT', price: '0.81', percent: '0.0099' }
 ];
 
 function BannerCard() {

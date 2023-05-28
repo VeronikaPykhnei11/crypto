@@ -10,26 +10,36 @@ export const CryptoHeatMap = () => {
   const [correlationMatrix, setCorrelationMatrix] = useState([]);
 
   const metrics = [
-    "Open price",
-    "High price",
-    "Low price",
-    "Close price",
-    "Volume",
-    "Quote asset volume",
-    "Number of trades",
+    'Open price',
+    'High price',
+    'Low price',
+    'Close price',
+    'Volume',
+    'Quote asset volume',
+    'Number of trades'
   ];
 
   useEffect(async () => {
-    axios.get(`https://api.binance.com/api/v3/klines?symbol=${coinSymbol}&interval=1d&limit=180`).then((response) => {
-      const preprocessedData = response.data.map((el) => {
-        return [parseFloat(el[1]), parseFloat(el[2]), parseFloat(el[3]), parseFloat(el[4]), parseFloat(el[5]), parseFloat(el[6]), parseFloat(el[7]),];
-      })
-      console.log(preprocessedData, 1111)
-      const correlationMatrix = calculateCorrelationMatrix(preprocessedData);
-      setCorrelationMatrix(correlationMatrix);
-    })}, []);
+    axios
+      .get(`https://api.binance.com/api/v3/klines?symbol=${coinSymbol}&interval=1d&limit=180`)
+      .then((response) => {
+        const preprocessedData = response.data.map((el) => {
+          return [
+            parseFloat(el[1]),
+            parseFloat(el[2]),
+            parseFloat(el[3]),
+            parseFloat(el[4]),
+            parseFloat(el[5]),
+            parseFloat(el[6]),
+            parseFloat(el[7])
+          ];
+        });
+        const correlationMatrix = calculateCorrelationMatrix(preprocessedData);
+        setCorrelationMatrix(correlationMatrix);
+      });
+  }, []);
 
-  const calculateCorrelationMatrix = data => {
+  const calculateCorrelationMatrix = (data) => {
     const matrixSize = data.length;
     const correlationMatrix = Array.from(Array(matrixSize), () => new Array(matrixSize));
 
@@ -39,7 +49,6 @@ export const CryptoHeatMap = () => {
         correlationMatrix.push([i, j, correlation]);
       }
     }
-    console.log(correlationMatrix);
 
     return correlationMatrix;
   };
@@ -72,29 +81,29 @@ export const CryptoHeatMap = () => {
   const getOption = () => {
     const option = {
       title: {
-        text: 'Теплова карта матриці кореляції',
+        text: 'Теплова карта матриці кореляції'
       },
       tooltip: {
         position: 'top',
-        formatter: (params) => `${params.data[2].toFixed(2)}`,
+        formatter: (params) => `${params.data[2].toFixed(2)}`
       },
       grid: {
         height: '50%',
-        top: '10%',
+        top: '10%'
       },
       xAxis: {
         type: 'category',
         data: metrics.map((_, i) => metrics[i]),
         splitArea: {
-          show: true,
-        },
+          show: true
+        }
       },
       yAxis: {
         type: 'category',
         data: metrics.map((_, i) => metrics[i]),
         splitArea: {
-          show: true,
-        },
+          show: true
+        }
       },
       visualMap: {
         min: -1,
@@ -102,7 +111,7 @@ export const CryptoHeatMap = () => {
         calculable: true,
         orient: 'horizontal',
         left: 'center',
-        bottom: '15%',
+        bottom: '15%'
       },
       series: [
         {
@@ -112,16 +121,16 @@ export const CryptoHeatMap = () => {
             row.map((correlation, colIndex) => [rowIndex, colIndex, correlation || '-'])
           ),
           label: {
-            show: true,
+            show: true
           },
           emphasis: {
             itemStyle: {
               shadowBlur: 10,
-              shadowColor: 'rgba(0, 0, 0, 0.5)',
-            },
-          },
-        },
-      ],
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+        }
+      ]
     };
 
     return option;

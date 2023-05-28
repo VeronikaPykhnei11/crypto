@@ -12,10 +12,10 @@ import forecast from '../../../assets/images/icons/forecast.svg';
 import userInterface from '../../../assets/images/icons/user-interface.svg';
 
 const trustBlog = [
-  { image: analysis, title: 'Buy Cryptocurrency with cash' },
-  { image: visualization, title: 'Buy Cryptocurrency with cash' },
-  { image: forecast, title: 'Buy Cryptocurrency with cash' },
-  { image: userInterface, title: 'Cryptocurrency Consultancy' }
+  { image: visualization, title: 'Visualization', info: 'The Visualization section of our website offers an immersive and dynamic experience for exploring and understanding cryptocurrency metrics through visually engaging charts and graphs. We believe that data visualization is a powerful tool for gaining insights and making informed decisions in the cryptocurrency market.' },
+  { image: analysis, title: 'Analysis', info: 'The Analysis section of our website provides an intuitive and comprehensive platform for analyzing and visualizing metrics related to cryptocurrencies. Whether you\'re an investor, trader, or simply interested in understanding the market trends, our analysis tools offer valuable insights and actionable information.' },
+  { image: forecast, title: 'Prediction', info: 'The Prediction section of our website harnesses the power of neural networks to provide accurate and reliable forecasts of future cryptocurrency prices. We understand that predicting price movements in the cryptocurrency market is a crucial aspect for investors and traders, and our advanced prediction tools are here to assist you.' },
+  { image: userInterface, title: 'Convenient UI', info: 'Our Convenient UI is designed to streamline your cryptocurrency analysis and visualization experience. We aim to empower users of all backgrounds and expertise levels to easily access and interpret market metrics, make data-driven decisions, and utilize neural network-based price predictions effectively.' }
 ];
 
 const Home = () => {
@@ -78,8 +78,7 @@ const Home = () => {
                       <div className="icon-content">
                         <h4 className="title">{data.title}</h4>
                         <p>
-                          Lorem Ipsum has been the industry's standard dummy text ever since the
-                          1500s, when an unknown printer took a galley.
+                          {data.info}
                         </p>
                         <Link className="btn btn-primary btn-gradient btn-shadow" to={'/about-us'}>
                           Read More
@@ -96,8 +95,8 @@ const Home = () => {
           <div className="container">
             <div className="section-head text-center">
               <h2 className="title">
-                One-stop solution to buy and sell{' '}
-                <span className="text-primary"> cryptocurrency </span> with Cash
+                Unleash the Power of {' '}
+                <span className="text-primary"> Data </span>: Analyze. Visualize. Predict.
               </h2>
             </div>
             <div className="row sp60">

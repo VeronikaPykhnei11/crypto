@@ -15,43 +15,39 @@ export const LoginForm = () => {
   const navigate = useNavigate();
 
   //TODO: винести в окремі файли
-  const showSuccessToastMessage = (message) => {
+  const showSuccessToastMessage = (message: any) => {
     toast.success(message);
   };
-  const showErrorToastMessage = (message) => {
+  const showErrorToastMessage = (message: any) => {
     toast.error(message);
   };
 
-  const SignInSchema = Yup.object().shape(
-    {
-      email:Yup.string()
-        .email('invalid email address')
-        .required('Required'),
-      password: Yup.string()
-        .required('Password is required')
-        .min(5, 'Your password is too short.')
-        .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
-    }
-  );
+  const SignInSchema = Yup.object().shape({
+    email: Yup.string().email('invalid email address').required('Required'),
+    password: Yup.string()
+      .required('Password is required')
+      .min(5, 'Your password is too short.')
+      .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.')
+  });
   return (
     <>
       <Formik
         initialValues={{ email: '', password: '' }}
         validationSchema={SignInSchema}
         onSubmit={(values, { setSubmitting }) => {
-          authService.signIn(values).then(({status, message, firstName, lastName}) => {
+          authService.signIn(values).then(({ status, message, firstName, lastName }) => {
             if (status === 200) {
-              showSuccessToastMessage(message)
+              showSuccessToastMessage(message);
               navigate('/admin');
               dispatch(successSignIn(firstName, lastName));
               dispatch(toggleAuthenticated(true));
             } else {
               //TODO: змінити повернення з бекенду, на більш універсальне
-              console.log(status, message)
-              showErrorToastMessage(message)
+              console.log(status, message);
+              showErrorToastMessage(message);
             }
-            setSubmitting(false)
-          })
+            setSubmitting(false);
+          });
         }}>
         {({ isSubmitting }) => (
           <Form className="login-form">

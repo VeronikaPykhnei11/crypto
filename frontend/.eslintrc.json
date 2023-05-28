@@ -19,8 +19,7 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint",
-        "prettier"
+        "@typescript-eslint"
     ],
     "parser": "@typescript-eslint/parser",
     "rules": {
@@ -29,6 +28,8 @@
         "react/jsx-no-target-blank": "off",
         "react/prop-types": "off",
         "react/no-case-declarations": "off",
-        "react/jsx-key": "off"
+        "react/jsx-key": "off",
+        "endOfLine": "off",
+        "prettier/prettier": "off"
     }
 }

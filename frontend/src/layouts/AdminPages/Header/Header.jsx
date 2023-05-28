@@ -7,9 +7,16 @@ import './styled.scss';
 import { activePageTitle } from '../../../redux/selectors/ActivePageSelector';
 import { isSideBarOpenSelector } from '../../../redux/selectors/SideBarSelectors';
 import { toggleSideBar } from '../../../redux/actions/actions';
+import { useLocation } from 'react-router-dom';
 
 export const Header = () => {
-  const pageTitle = useSelector(activePageTitle);
+  const location = useLocation();
+  const pageTitle =
+    location.pathname === '/admin/dashboard'
+      ? 'Dashboard'
+      : location.pathname === '/admin/coin-details'
+      ? 'Coin details'
+      : '';
   const isSideBarOpen = useSelector(isSideBarOpenSelector);
   const dispatch = useDispatch();
   const [headerFix, setheaderFix] = useState(false);

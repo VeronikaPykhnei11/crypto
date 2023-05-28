@@ -582,24 +582,43 @@ import axios from 'axios';
 //   return <ReactApexChart options={options} series={series} type="candlestick" height={340} />;
 // };
 
-export const CandleChart = ({isFuture}) => {
+export const CandleChart = ({ isFuture, prediction }) => {
   const coinSymbol = useSelector(coinSymbolSelector);
   const [cryptoData, setCryptoData] = useState([]);
   useEffect(async () => {
-    axios.get(`https://api.binance.com/api/v3/klines?symbol=${coinSymbol}&interval=1d&limit=180`).then((response) => {
-      const preprocessedData = response.data.map((el) => {
-        const date = new Date(el[0]);
+    axios
+      .get(`https://api.binance.com/api/v3/klines?symbol=${coinSymbol}&interval=1d&limit=180`)
+      .then((response) => {
+        const preprocessedData = response.data.map((el) => {
+          const date = new Date(el[0]);
 
-        const year = date.getFullYear();
-        const month = date.getMonth() + 1;
-        const day = date.getDate();
+          const year = date.getFullYear();
+          const month = date.getMonth() + 1;
+          const day = date.getDate();
 
-        const formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
-        return [formattedDate, parseFloat(el[1]).toFixed(8).replace(/\.?0+$/, ""), parseFloat(el[2]).toFixed(8).replace(/\.?0+$/, ""), parseFloat(el[3]).toFixed(8).replace(/\.?0+$/, ""), parseFloat(el[4]).toFixed(8).replace(/\.?0+$/, "")];
-      })
-      setCryptoData(preprocessedData)
-    })
+          const formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day
+            .toString()
+            .padStart(2, '0')}`;
+          return [
+            formattedDate,
+            parseFloat(el[1])
+              .toFixed(8)
+              .replace(/\.?0+$/, ''),
+            parseFloat(el[2])
+              .toFixed(8)
+              .replace(/\.?0+$/, ''),
+            parseFloat(el[3])
+              .toFixed(8)
+              .replace(/\.?0+$/, ''),
+            parseFloat(el[4])
+              .toFixed(8)
+              .replace(/\.?0+$/, '')
+          ];
+        });
+        setCryptoData(preprocessedData);
+      });
   }, []);
+
   function calculateMA(dayCount, data) {
     let result = [];
     for (let i = 0, len = data.length; i < len; i++) {
@@ -615,9 +634,17 @@ export const CandleChart = ({isFuture}) => {
     }
     return result;
   }
+
   const dates = cryptoData.map(function (item) {
     return item[0];
   });
+  const currentDate = new Date();
+  for (let i = 0; i < 29; i++) {
+    currentDate.setDate(currentDate.getDate() + 1);
+    const formattedDate = currentDate.toISOString().split('T')[0];
+    dates.push(formattedDate);
+  }
+  const pred = [...Array(dates.length - 29).fill('-'), ...prediction];
   const option = {
     legend: {
       data: ['日K', 'Neural Network prediction'],
@@ -685,16 +712,14 @@ export const CandleChart = ({isFuture}) => {
       {
         name: 'Neural Network prediction',
         type: 'line',
-        data: calculateMA(5, cryptoData),
+        data: pred,
         smooth: true,
         showSymbol: false,
         lineStyle: {
           width: 1
         }
-      },
+      }
     ]
   };
-  return (
-    <ReactECharts option={option} style={{height: '400px', width: "100%"}}/>
-  );
-}
+  return <ReactECharts option={option} style={{ height: '400px', width: '100%' }} />;
+};

@@ -6,11 +6,36 @@ import './styled.scss';
 
 export const CoinDetailsRowList = () => {
   const tabHeading = [
-    { title: 'Bitcoin', keytype: 'bitcoin', changelog: 'bitcoin ms-0', icon: coinIcon },
-    { title: 'Ethereum', keytype: 'ethereum', changelog: 'etherum', icon: coinIcon },
-    { title: 'Dash', keytype: 'dash', changelog: 'dash', icon: coinIcon },
-    { title: 'Litecoin', keytype: 'litecoin', changelog: 'litcoin', icon: coinIcon },
-    { title: 'Ripple', keytype: 'ripple', changelog: 'ripple', icon: coinIcon }
+    {
+      title: 'Bitcoin',
+      keytype: 'bitcoin',
+      changelog: 'bitcoin ms-0',
+      icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png'
+    },
+    {
+      title: 'Ethereum',
+      keytype: 'ethereum',
+      changelog: 'etherum',
+      icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png'
+    },
+    {
+      title: 'Dash',
+      keytype: 'dash',
+      changelog: 'dash',
+      icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/131.png'
+    },
+    {
+      title: 'Litecoin',
+      keytype: 'litecoin',
+      changelog: 'litcoin',
+      icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/2.png'
+    },
+    {
+      title: 'Ripple',
+      keytype: 'ripple',
+      changelog: 'ripple',
+      icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/52.png'
+    }
   ];
   return (
     <div className={'row'}>
@@ -21,7 +46,7 @@ export const CoinDetailsRowList = () => {
               {tabHeading.map((item, index) => (
                 <Nav.Item as="li" key={index} className={'nav-link-item'}>
                   <Nav.Link as="button" className={`${item.changelog}`} eventKey={item.keytype}>
-                    <img src={item.icon} className={'coin-icon'} />
+                    <img width={'30px'} height={'30px'} src={item.icon} className={'coin-icon'} />
                     {item.title}
                   </Nav.Link>
                 </Nav.Item>
